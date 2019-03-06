@@ -6,8 +6,7 @@
       "src": "packages/app/package.json",
       "use": "@now/static-build",
       "config": {
-        "distDir": "build",
-        "newPipeline": true
+        "distDir": "build"
       }
     },
     {
@@ -20,6 +19,10 @@
     {
       "src": "^/api/generate.*",
       "dest": "/packages/api/generate.js"
+    },
+    {
+      "src": "^/(.*)",
+      "dest": "/packages/app/$1"
     }
   ]
 }

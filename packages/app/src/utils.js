@@ -16,5 +16,5 @@ export function getHandleFromName(fname, lname) {
 }
 
 export function getRandomDate() {
-  return new Date(Date.now() - random(3600000, 94608000));
+  return new Date(Date.now() - random(3600000, 94608000000));
 }

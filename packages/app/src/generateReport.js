@@ -27,8 +27,11 @@ function generateFeedback(issue, url) {
 }
 function processIssues(issues = [], url) {
   const codes = Object.values(supportedRules);
+  const alreadySeenCodes = {};
   issues = issues.map(issue => {
+    if (alreadySeenCodes[issue.code]) return;
     if (codes.includes(issue.code)) {
+      alreadySeenCodes[issue.code] = true;
       return generateFeedback(issue, url);
     }
   });
