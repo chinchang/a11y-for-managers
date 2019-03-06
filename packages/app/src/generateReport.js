@@ -2,11 +2,21 @@ import { random } from "./utils";
 
 const supportedRules = {
   HEADING_WITHOUT_CONTENT: "WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2",
-  INSUFFICIENT_CONTRAST: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail"
+  INSUFFICIENT_CONTRAST: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+  MISSING_LABEL_ON_FORM_CONTROL: "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
 };
 
 function generateFeedback(issue, url) {
   switch (issue.code) {
+    case supportedRules.MISSING_LABEL_ON_FORM_CONTROL: {
+      return {
+        message: [
+          `Dear Web Developer, I cannot see and browse the web using screen reader. And websites like ${url} on which you dont label your form elements are completely unusable to people like me. #fixtheweb #a11y`,
+          `Oh God! It's a disaster browsing websites where the develop simply didn't care to put a label on form controls!! Encountered one such site -> ${url} #accessibility.`,
+          `People from ${url}, I am a screen-reader user and I wanted to tell you that I am not able to use your website forms because there are no labels! #a11y #sad`
+        ][random(0, 3)]
+      };
+    }
     case supportedRules.INSUFFICIENT_CONTRAST: {
       return {
         message: [
