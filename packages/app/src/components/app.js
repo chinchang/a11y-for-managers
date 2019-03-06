@@ -148,6 +148,11 @@ export default class App extends Component {
           to your organization manager and give them what they want. 😀🤟🏼
         </p>
         <p class="hide-in-print">
+          And it's not just humour. The generated feedback report also helps
+          translate the failing rules into actual understandable problems that
+          real users might be facing.
+        </p>
+        <p class="hide-in-print">
           <form onSubmit={this.submitHandler}>
             <div class="url-form-wrap">
               <label class="">
