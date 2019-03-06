@@ -1,0 +1,12 @@
+{
+  "name": "a11yreportformanagers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd packages/app; yarn start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

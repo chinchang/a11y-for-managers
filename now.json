@@ -1,0 +1,17 @@
+{
+  "name": "a11yreport",
+  "version": 2,
+  "builds": [
+    {
+      "src": "packages/api/generate.js",
+      "use": "@now/node",
+      "config": { "maxLambdaSize": "40mb" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/api/generate.*",
+      "dest": "/packages/api/generate.js"
+    }
+  ]
+}
