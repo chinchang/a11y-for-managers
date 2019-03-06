@@ -39,7 +39,7 @@ function processIssues(issues = [], url) {
 }
 export async function generateReport(url) {
   let res = await fetch(
-    `https://a11yreport-6ml461tit.now.sh/api/generate?url=${url}`
+    `https://a11yformanagers.now.sh/api/generate?url=${url}`
   );
   res = await res.json();
   const issues = res.issues;
