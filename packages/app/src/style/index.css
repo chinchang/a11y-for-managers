@@ -31,7 +31,7 @@ body {
 input,
 button {
   font-size: inherit;
-  padding: 1em;
+  padding: 0.5em 1em;
 }
 hr {
   margin: 3em 0;
@@ -59,7 +59,9 @@ hr {
   padding: 2em 0;
   text-align: center;
 }
-
+.main-title {
+  margin-top: 0;
+}
 /* CARD */
 .card {
   flex-shrink: 0;

@@ -132,7 +132,9 @@ export default class App extends Component {
   render(props, { url, isReportLoading, issues, users = [] }) {
     return (
       <div id="app">
-        <h1 class="hide-in-print">Accessibility Report for Managers</h1>
+        <h1 class="main-title hide-in-print">
+          Accessibility Report for Managers
+        </h1>
         <p class="hide-in-print">
           Are you trying to incorporate Accessibility in your organization?
           <br />
@@ -141,9 +143,9 @@ export default class App extends Component {
           things to do right now."?
         </p>
         <p class="hide-in-print">
-          Well, now you can use this tool to generate fake customer report of
-          real issues on your website. Show that customer report to your
-          organization management and give them what they want. 😀🤟🏼
+          Well, now you can use this tool to generate fake customer feedback
+          report of real Accessibility issues on your website. Show that report
+          to your organization manager and give them what they want. 😀🤟🏼
         </p>
         <p class="hide-in-print">
           <form onSubmit={this.submitHandler}>
@@ -168,7 +170,13 @@ export default class App extends Component {
             page, generating fake responses from fake users...
           </p>
         ) : null}
-        {isReportLoading === false ? (
+        {isReportLoading === false && !issues.length ? (
+          <p>
+            No Accessibility issue found that is supported by this tool. I am
+            adding more support meanwhile.
+          </p>
+        ) : null}
+        {isReportLoading === false && issues.length ? (
           <section>
             <h2>
               Accessibility feedback for{" "}
@@ -176,6 +184,7 @@ export default class App extends Component {
                 {url}
               </a>
             </h2>
+            <em>Show this to your manager :)</em>
             <p class="hide-in-print">
               <label>
                 <input
