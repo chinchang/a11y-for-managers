@@ -3,6 +3,14 @@
   "version": 2,
   "builds": [
     {
+      "src": "packages/app/package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "build",
+        "newPipeline": true
+      }
+    },
+    {
       "src": "packages/api/generate.js",
       "use": "@now/node",
       "config": { "maxLambdaSize": "40mb" }

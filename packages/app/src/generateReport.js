@@ -1,3 +1,5 @@
+import { random } from "./utils";
+
 const supportedRules = {
   HEADING_WITHOUT_CONTENT: "WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2",
   INSUFFICIENT_CONTRAST: "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail"
@@ -7,7 +9,11 @@ function generateFeedback(issue, url) {
   switch (issue.code) {
     case supportedRules.INSUFFICIENT_CONTRAST: {
       return {
-        message: `Hello! I was browsing through your website ${url} and facing issues with reading few texts. I guess it could get a lil' better for people like me if the text color had some more contrast with the background. Happy to reply if any further questions.`
+        message: [
+          `Hello! I was browsing through your website ${url} and facing issues with reading few texts. I guess it could get a lil' better for people like me if the text color had some more contrast with the background. Happy to reply if any further questions.`,
+          `It's such a difficult task to read websites these days. Eg. Missing text contrast here -> ${url} Someone please fix the web. #accessibility`,
+          `Ouch, websites getting more and more inaccessible. I have a low vision and now I can't surf anymore! ${url} #a11y`
+        ][random(0, 3)]
       };
     }
     case supportedRules.HEADING_WITHOUT_CONTENT: {

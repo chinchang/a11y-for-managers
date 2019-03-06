@@ -134,13 +134,16 @@ export default class App extends Component {
       <div id="app">
         <h1 class="hide-in-print">Accessibility Report for Top Management</h1>
         <p class="hide-in-print">
-          Are you trying to include Accessibility in your organization? Do you
-          mostly get sided-away with responses like "Do our customers really
-          need it?" or "No one is asking for it. We have more important things
-          to do right now."? Well, now you can use this tool to generate fake
-          customer report of real issues on your website. Show that customer
-          report to your organization management and give them what they want.
-          😀🤟🏼
+          Are you trying to incorporate Accessibility in your organization?
+          <br />
+          Do you mostly get sided-away with responses like "Do our customers
+          really need it?" or "No one is asking for it. We have more important
+          things to do right now."?
+        </p>
+        <p class="hide-in-print">
+          Well, now you can use this tool to generate fake customer report of
+          real issues on your website. Show that customer report to your
+          organization management and give them what they want. 😀🤟🏼
         </p>
         <p class="hide-in-print">
           <form onSubmit={this.submitHandler}>
