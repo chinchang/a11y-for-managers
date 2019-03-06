@@ -132,7 +132,7 @@ export default class App extends Component {
   render(props, { url, isReportLoading, issues, users = [] }) {
     return (
       <div id="app">
-        <h1 class="hide-in-print">Accessibility Report for Top Management</h1>
+        <h1 class="hide-in-print">Accessibility Report for Managers</h1>
         <p class="hide-in-print">
           Are you trying to incorporate Accessibility in your organization?
           <br />
@@ -147,10 +147,17 @@ export default class App extends Component {
         </p>
         <p class="hide-in-print">
           <form onSubmit={this.submitHandler}>
-            <label>
-              <input value={url} onInput={this.inputChangeHandler} />{" "}
+            <div class="url-form-wrap">
+              <label class="">
+                <span class="fxs-0">Enter a URL:</span>{" "}
+                <input
+                  value={url}
+                  onInput={this.inputChangeHandler}
+                  class="fx-1"
+                />{" "}
+              </label>
               <button class="btn">Generate Report</button>
-            </label>
+            </div>
           </form>
         </p>
         {isReportLoading !== undefined ? <hr /> : null}
@@ -196,7 +203,33 @@ export default class App extends Component {
           <a href="https://twitter.com/chinchang457" rel="external noopener">
             Kushagra Gour
           </a>{" "}
-          with hands <span aria-hidden="true">🙌🏼</span> as a one-day product
+          with hands <span aria-hidden="true">🙌🏼</span> as a 24 hour product.
+          <p>
+            <a
+              href="https://github.com/chinchang/a11y-for-managers"
+              rel="external noopener"
+            >
+              Contribute
+            </a>
+            <span class="separator-h" aria-hidden="true">
+              •
+            </span>
+            Build with{" "}
+            <a href="https://preactjs.com" rel="external noopener">
+              Preact
+            </a>{" "}
+            &{" "}
+            <a href="http://pa11y.org/" rel="external noopener">
+              pa11y
+            </a>
+            <span class="separator-h" aria-hidden="true">
+              •
+            </span>
+            Hosted on{" "}
+            <a href="https://zeit.co/now" rel="external noopener">
+              Zeit Now
+            </a>
+          </p>
         </footer>
       </div>
     );
