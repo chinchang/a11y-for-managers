@@ -166,8 +166,11 @@ export default class App extends Component {
 
         {isReportLoading === true ? (
           <p>
-            <span aria-hidden="true">⚙️</span> Sit tight. I am analysing the
-            page, generating fake responses from fake users...
+            <span class="loader" aria-hidden="true">
+              ⚙️
+            </span>{" "}
+            Sit tight. I am analysing the page, generating fake responses from
+            fake users...
           </p>
         ) : null}
         {isReportLoading === false && !issues.length ? (

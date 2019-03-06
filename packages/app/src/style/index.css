@@ -109,7 +109,16 @@ hr {
   width: 100%;
   margin: 3px 0;
 }
-
+.loader {
+  display: inline-block;
+  transform-origin: center 16px;
+  animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(359deg);
+  }
+}
 @media screen and (min-width: 800px) {
   html,
   body {
