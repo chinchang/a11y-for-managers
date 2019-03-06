@@ -200,7 +200,7 @@ export default class App extends Component {
             <p class="disclaimer hide-in-print">
               <strong>Disclaimer</strong>: Following tweets and it's users are
               fake. But the <u>Accessibility issues are real</u>, as found on
-              the page.
+              the page. Any resemblance to any real user is mere coincidence.
             </p>
 
             <div class="card-container">

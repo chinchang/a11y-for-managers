@@ -20,7 +20,7 @@ function generateFeedback(issue, url) {
     case supportedRules.INSUFFICIENT_CONTRAST: {
       return {
         message: [
-          `Hello! I was browsing through your website ${url} and facing issues with reading few texts. I guess it could get a lil' better for people like me if the text color had some more contrast with the background. Happy to reply if any further questions.`,
+          `Hello! I was browsing through your website ${url} and facing issues with reading few texts. I guess it could get a lil' better for people like me if the text color had some more contrast with the background.`,
           `It's such a difficult task to read websites these days. Eg. Missing text contrast here -> ${url} Someone please fix the web. #accessibility`,
           `Ouch, websites getting more and more inaccessible. I have a low vision and now I can't surf anymore with such low contrast texts! ${url} #a11y`
         ][random(0, 3)]
