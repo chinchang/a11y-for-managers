@@ -55,14 +55,18 @@ function processIssues(issues = [], url) {
   return issues.filter(issue => issue);
 }
 export async function generateReport(url) {
-  let res = await fetch(
-    `https://a11yformanagers.now.sh/api/generate?url=${url}`
-  );
-  res = await res.json();
-  const issues = res.issues;
+  try {
+    let res = await fetch(
+      `https://a11yformanagers.now.sh/api/generate?url=${url}`
+    );
+    res = await res.json();
+    const issues = res.issues;
 
-  if (!issues.length) {
-    return [];
+    if (!issues.length) {
+      return [];
+    }
+    return processIssues(issues, url);
+  } catch (e) {
+    return Promise.reject();
   }
-  return processIssues(issues, url);
 }

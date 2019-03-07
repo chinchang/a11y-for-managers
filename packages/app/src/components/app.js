@@ -27,7 +27,8 @@ export default class App extends Component {
       const match = location.search.match(/url\=([^&]*)/);
       return match ? match[1] : "";
     })(),
-    isReportLoading: window.DEBUG ? false : undefined
+    isReportLoading: window.DEBUG ? false : undefined,
+    reportError: null
   };
   fetchUsers = count => {
     return fetch(`https://randomuser.me/api/?results=${count}`)
@@ -41,19 +42,28 @@ export default class App extends Component {
     });
   };
   submitHandler = e => {
-    console.log(this.state.url);
+    // console.log(this.state.url);
     e.preventDefault();
     this.setState({
-      isReportLoading: true
+      isReportLoading: true,
+      reportError: null
     });
-    generateReport(this.state.url).then(async issues => {
-      const users = await this.fetchUsers(issues.length);
-      this.setState({
-        isReportLoading: false,
-        issues,
-        users
+    generateReport(this.state.url)
+      .then(async issues => {
+        const users = await this.fetchUsers(issues.length);
+        this.setState({
+          isReportLoading: false,
+          issues,
+          users
+        });
+      })
+      .catch(e => {
+        this.setState({
+          reportError: true,
+          isReportLoading: false,
+          issues: []
+        });
       });
-    });
   };
   screenshotSwitchChangeHandler = e => {
     if (e.target.checked) {
@@ -63,7 +73,10 @@ export default class App extends Component {
     }
   };
 
-  render(props, { url, isReportLoading, issues = [], users = [] }) {
+  render(
+    props,
+    { url, reportError, isReportLoading, issues = [], users = [] }
+  ) {
     issues = window.DEBUG ? json.issues : issues;
     return (
       <div id="app">
@@ -78,14 +91,13 @@ export default class App extends Component {
           things to do right now."?
         </p>
         <p class="hide-in-print">
-          Well, now you can use this tool to generate fake customer feedback
-          report of real Accessibility issues on your website. Show that report
-          to your organization manager and give them what they want. 😀🤟🏼
+          This tool helps translate the failing Accessibility rules on a website
+          into actual understandable problems that real users might be facing by
+          generating dummy feedback from dummy users.
         </p>
         <p class="hide-in-print">
-          And it's not just humour. The generated feedback report also helps
-          translate the failing rules into actual understandable problems that
-          real users might be facing.
+          You can always go a step further and show the report to your manager
+          and give them what they want. 😀🤟🏼
         </p>
         <p class="hide-in-print">
           <form onSubmit={this.submitHandler}>
@@ -103,6 +115,7 @@ export default class App extends Component {
           </form>
         </p>
         {isReportLoading !== undefined ? <hr /> : null}
+        {reportError ? <p>Oops! I couldn't analyze the page on {url}</p> : null}
 
         {isReportLoading === true ? (
           <p>
@@ -113,7 +126,7 @@ export default class App extends Component {
             fake users...
           </p>
         ) : null}
-        {isReportLoading === false && !issues.length ? (
+        {isReportLoading === false && !reportError && !issues.length ? (
           <p>
             No Accessibility issue found that is supported by this tool. I am
             adding more support meanwhile.
@@ -127,7 +140,6 @@ export default class App extends Component {
                 {url}
               </a>
             </h2>
-            <em>Show this to your manager :)</em>
             <p class="hide-in-print">
               <label>
                 <input
