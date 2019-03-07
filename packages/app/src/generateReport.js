@@ -42,7 +42,12 @@ function processIssues(issues = [], url) {
     if (alreadySeenCodes[issue.code]) return;
     if (codes.includes(issue.code)) {
       alreadySeenCodes[issue.code] = true;
-      return generateFeedback(issue, url);
+      return {
+        ...generateFeedback(issue, url),
+        imageUrl: `/api/image?url=${url}&selector=${encodeURIComponent(
+          issue.selector
+        )}`
+      };
     }
   });
   return issues.filter(issue => issue);

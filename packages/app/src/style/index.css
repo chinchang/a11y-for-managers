@@ -114,6 +114,15 @@ hr {
   transform-origin: center 16px;
   animation: rotate 2s infinite linear;
 }
+.card__image {
+  border-radius: 10px;
+  margin-top: 15px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  /* display: flex; */
+  justify-content: center;
+  max-height: 250px;
+}
 @keyframes rotate {
   to {
     transform: rotate(359deg);

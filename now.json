@@ -13,12 +13,23 @@
       "src": "packages/api/generate.js",
       "use": "@now/node",
       "config": { "maxLambdaSize": "40mb" }
+    },
+    {
+      "src": "packages/api/image.js",
+      "use": "@now/node",
+      "config": {
+        "maxLambdaSize": "40mb"
+      }
     }
   ],
   "routes": [
     {
       "src": "^/api/generate.*",
       "dest": "/packages/api/generate.js"
+    },
+    {
+      "src": "^/api/image.*",
+      "dest": "/packages/api/image.js"
     },
     {
       "src": "^/(.*)",
