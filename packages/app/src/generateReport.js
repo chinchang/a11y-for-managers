@@ -12,9 +12,10 @@ function generateFeedback(issue, url) {
       return {
         message: [
           `Dear Web Developer, I cannot see and browse the web using screen reader. And websites like ${url} on which you dont label your form elements are completely unusable to people like me. #fixtheweb #a11y`,
-          `Oh God! It's a disaster browsing websites where the develop simply didn't care to put a label on form controls!! Encountered one such site -> ${url} #accessibility.`,
-          `People from ${url}, I am a screen-reader user and I wanted to tell you that I am not able to use your website forms because there are no labels! #a11y #sad`
-        ][random(0, 3)]
+          `Oh God! It's a disaster browsing websites where the developer simply didn't care to put a label on form controls!! Encountered one such site -> ${url} #accessibility.`,
+          `People from ${url}, I am a screen-reader user and I wanted to tell you that I am not able to use your website forms because there are no labels! #a11y #sad`,
+          `🤦🏿‍ Not again! ${url}. Devs, LABELS ARE NOT JUST FOR SIGHTED USERS!! There are people who need to hear them. #webisbroken`
+        ][random(0, 4)]
       };
     }
     case supportedRules.INSUFFICIENT_CONTRAST: {
@@ -22,8 +23,9 @@ function generateFeedback(issue, url) {
         message: [
           `Hello! I was browsing through your website ${url} and facing issues with reading few texts. I guess it could get a lil' better for people like me if the text color had some more contrast with the background.`,
           `It's such a difficult task to read websites these days. Eg. Missing text contrast here -> ${url} Someone please fix the web. #accessibility`,
-          `Ouch, websites getting more and more inaccessible. I have a low vision and now I can't surf anymore with such low contrast texts! ${url} #a11y`
-        ][random(0, 3)]
+          `Ouch, websites getting more and more inaccessible. I have a low vision and now I can't surf anymore with such low contrast texts! ${url} #a11y`,
+          `If I can't read texts on your website, don't expect me to become your custom ${url}. I wonder whom are you making those designs for!! #accessibility`
+        ][random(0, 4)]
       };
     }
     case supportedRules.HEADING_WITHOUT_CONTENT: {
