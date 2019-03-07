@@ -4,15 +4,15 @@ export function random(a, b) {
 
 export function getHandleFromName(fname, lname) {
   let handle = [
-    `${fname.substr(0, random(0, fname.length - 1))}`,
+    `${fname.substr(0, random(1, fname.length - 1))}`,
     Math.random() > 0.5 ? "_" : "",
-    `${lname.substr(0, random(0, lname.length - 1))}`
+    `${lname.substr(0, random(1, lname.length - 1))}`
   ].join("");
 
   if (Math.random() > 0.7) {
     handle = `${handle}${random(0, 999)}`;
   }
-  return handle;
+  return `@${handle}`;
 }
 
 export function getRandomDate() {
