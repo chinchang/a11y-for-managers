@@ -45,6 +45,7 @@ function processIssues(issues = [], url) {
     if (codes.includes(issue.code)) {
       alreadySeenCodes[issue.code] = true;
       return {
+        ...issue,
         fix: issue.message,
         ...generateFeedback(issue, url),
         imageUrl: `/api/image?url=${url}&selector=${encodeURIComponent(

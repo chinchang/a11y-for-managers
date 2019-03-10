@@ -30,9 +30,7 @@ export default class App extends Component {
       return match ? match[1] : "";
     })(),
     isReportLoading: window.DEBUG ? false : undefined,
-    reportError: null,
-    issueFix: "",
-    isFixVisible: false
+    reportError: null
   };
   fetchUsers = count => {
     return fetch(`https://randomuser.me/api/?results=${count}`)
@@ -103,7 +101,7 @@ export default class App extends Component {
       isReportLoading,
       issues = [],
       users = [],
-      issueFix,
+      issueFix = {},
       isFixVisible
     }
   ) {
@@ -170,13 +168,13 @@ export default class App extends Component {
                 {url}
               </a>
             </h2>
-            <p class="hide-in-print">
+            <p>
               <label>
                 <input
                   type="checkbox"
                   onChange={this.screenshotSwitchChangeHandler}
                 />{" "}
-                Prepare report for screenshot (Come back by pressing Space key)
+                Prepare report for screenshot
               </label>
             </p>
             <p class="disclaimer hide-in-print">
@@ -238,7 +236,22 @@ export default class App extends Component {
         >
           <div class="modal__content">
             <h3>Solution</h3>
-            <p>{issueFix}</p>
+            <p>{issueFix.fix}</p>
+            <p>
+              <a
+                target="_blank"
+                rel="external noopener"
+                href={issueFix.readLink}
+              >
+                Read more about this.
+              </a>
+              <svg style="width:0.9em;height:0.9em" viewBox="0 0 24 24">
+                <path
+                  fill="#666"
+                  d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                />
+              </svg>
+            </p>
             <button
               type="button"
               onClick={() => this.setState({ isFixVisible: false })}

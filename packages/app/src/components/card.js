@@ -24,7 +24,15 @@ export function Card({ issue, user, onClick }) {
   const date = getRandomDate();
 
   return (
-    <button class="card" onClick={() => onClick(issue.fix)}>
+    <button
+      class="card"
+      onClick={() =>
+        onClick({
+          fix: issue.fix,
+          readLink: `https://google.com/search?q=${issue.code}`
+        })
+      }
+    >
       <div class="card__header">
         <div class="card__user-wrap">
           <div class="card__user-img-wrap">

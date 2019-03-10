@@ -33,6 +33,10 @@ button {
   font-size: inherit;
   padding: 0.5em 1em;
 }
+input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+}
 hr {
   margin: 2.5em 0;
 }
