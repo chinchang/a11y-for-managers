@@ -78,6 +78,10 @@ hr {
   max-width: 550px;
   margin: 0.5em;
   word-break: break-word;
+  text-align: left;
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
 }
 .card__header {
   display: flex;
