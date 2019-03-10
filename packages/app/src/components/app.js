@@ -66,6 +66,11 @@ export default class App extends Component {
           issues: []
         });
       });
+
+    // scroll to show loader
+    setTimeout(() => {
+      window.scrollTo(0, 9999);
+    }, 200);
   };
   screenshotSwitchChangeHandler = e => {
     if (e.target.checked) {
