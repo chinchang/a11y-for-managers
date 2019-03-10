@@ -16,7 +16,7 @@ const months = [
   "Dec"
 ];
 
-export function Card({ issue, user }) {
+export function Card({ issue, user, onClick }) {
   if (window.DEBUG) {
     user = { ...userData };
   }
@@ -24,7 +24,7 @@ export function Card({ issue, user }) {
   const date = getRandomDate();
 
   return (
-    <div class="card">
+    <button class="card" onClick={() => onClick(issue.fix)}>
       <div class="card__header">
         <div class="card__user-wrap">
           <div class="card__user-img-wrap">
@@ -68,6 +68,6 @@ export function Card({ issue, user }) {
       <div class="card__image">
         <img src={issue.imageUrl} />
       </div>
-    </div>
+    </button>
   );
 }
