@@ -41,7 +41,10 @@ input[type="checkbox"] {
   height: 1em;
 }
 hr {
-  margin: 2.5em 0;
+  border: 0;
+  height: 4px;
+  background-color: #ccc;
+  margin: 2.5em;
 }
 #app {
   min-height: 100vh;
