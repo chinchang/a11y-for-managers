@@ -78,11 +78,10 @@ hr {
 }
 /* CARD */
 .card {
-  flex-shrink: 0;
-  display: inline-block;
+  display: block;
   border: 1px solid #ccc;
   padding: 1em;
-  max-width: 550px;
+  width: 100%;
   margin: 0.5em;
   word-break: break-word;
   text-align: left;
@@ -130,8 +129,9 @@ hr {
   margin: 3px 0;
 }
 .loader {
+  /* font-size: 1em; */
   display: inline-block;
-  transform-origin: center 16px;
+  /* transform-origin: center center -3px; */
   animation: rotate 2s infinite linear;
 }
 .card__image {
@@ -184,6 +184,11 @@ hr {
   body,
   .modal__content {
     padding: 1em;
+  }
+  .card {
+    width: auto;
+    max-width: 550px;
+    flex-shrink: 0;
   }
 }
 @media screen and (min-width: 1300px) {
