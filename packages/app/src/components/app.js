@@ -150,7 +150,7 @@ export default class App extends Component {
         {isReportLoading !== undefined ? <hr /> : null}
         {reportError ? <p>Oops! I couldn't analyze the page on {url}</p> : null}
 
-        {true === true ? (
+        {isReportLoading === true ? (
           <p>
             <span class="loader" aria-hidden="true">
               <svg style="width:1em;height:1em;" viewBox="0 0 24 24">
