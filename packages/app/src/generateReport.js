@@ -24,7 +24,7 @@ function generateFeedback(issue, url) {
           `Hello! I was browsing through your website ${url} and facing issues with reading few texts. I guess it could get a lil' better for people like me if the text color had some more contrast with the background.`,
           `It's such a difficult task to read websites these days. Eg. Missing text contrast here -> ${url} Someone please fix the web. #accessibility`,
           `Ouch, websites getting more and more inaccessible. I have a low vision and now I can't surf anymore with such low contrast texts! ${url} #a11y`,
-          `If I can't read texts on your website, don't expect me to become your custom ${url}. I wonder whom are you making those designs for!! #accessibility`
+          `If I can't read texts on your website, don't expect me to become your customer ${url}. I wonder whom are you making those designs for!! #accessibility`
         ][random(0, 4)]
       };
     }
