@@ -7,13 +7,13 @@ This tool helps translate the failing Accessibility rules on a website into actu
 
 You can always go a step further and show the report to your manager and give them what they want. 😀🤟🏼
 
-## Credtis:
+## Credits:
 
-- Preactjs
-- pa11y.js
-- materialdesignicons.com
-- Zeit Now
-- Puppeteer
+- [Preact](https://preactjs.com/) by @developit
+- [pa11y.js](http://pa11y.org/)
+- [materialdesignicons.com](http://materialdesignicons.com/)
+- [ZEIT Now](https://now.sh)
+- [Puppeteer](https://github.com/GoogleChrome/puppeteer)
 
 
 
