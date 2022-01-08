@@ -1,5 +1,5 @@
 import chrome from "chrome-aws-lambda";
-import * as puppeteer from "puppeteer-core";
+const puppeteer = require('puppeteer-core');
 
 const padding = 10;
 
