@@ -235,7 +235,7 @@ export default class App extends Component {
               •
             </span>
             Hosted on{" "}
-            <a href="https://zeit.co/now" rel="external noopener">
+            <a href="https://vercel.com" rel="external noopener">
               Vercel
             </a>
           </p>
