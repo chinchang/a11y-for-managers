@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chrome-aws-lambda": "^1.12.2",
+    "chrome-aws-lambda": "^10.1.0",
     "pa11y": "^5.1.0",
-    "puppeteer-core": "^1.13.0"
+    "puppeteer-core": "^13.0.1"
   }
 }
