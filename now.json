@@ -4,19 +4,19 @@
   "builds": [
     {
       "src": "packages/app/package.json",
-      "use": "@now/static-build",
+      "use": "@vercel/static-build",
       "config": {
         "distDir": "build"
       }
     },
     {
       "src": "packages/api/generate.js",
-      "use": "@now/node",
+      "use": "@vercel/node",
       "config": { "maxLambdaSize": "40mb" }
     },
     {
       "src": "packages/api/image.js",
-      "use": "@now/node",
+      "use": "@vercel/node",
       "config": {
         "maxLambdaSize": "40mb"
       }
